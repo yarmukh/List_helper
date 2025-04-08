@@ -7,4 +7,7 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(
     ToDoList
     sources/main.cpp
+    sources/Notebook.cpp
+    headers/Note.h
+    headers/Notebook.h
 )
