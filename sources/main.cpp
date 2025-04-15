@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include "../headers/Notebook.h"
+#include "../headers/ClearScreen.h"
+
 
 int main() {
     
@@ -20,11 +22,12 @@ int main() {
         std::cin >> solution;
         
         if( solution == 1) {
-
+            notebook.print_list();
         }
 
         if( solution == 2) {
-
+            Notebook MyNotebook;
+            MyNotebook.add_new_note(Note note);
         }
         
         if( solution == 3 ) {
@@ -35,6 +38,7 @@ int main() {
             break;
         }
 
-        // отчищать экран
+        clearScreen(); //очищает экран
+        
     }
 }
