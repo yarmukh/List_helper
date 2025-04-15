@@ -26,8 +26,14 @@ int main() {
         }
 
         if( solution == 2) {
-            Notebook MyNotebook;
-            MyNotebook.add_new_note(Note note);
+            Note note;
+            std::cout << "Enter your description:" << std::endl;
+            std::cin >> note.description;
+            clearScreen();
+            std::cout << "Enter your priority:" << std::endl;
+            std::cin >> note.priority;
+            clearScreen();
+            notebook.add_new_note(note);
         }
         
         if( solution == 3 ) {

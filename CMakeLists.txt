@@ -10,4 +10,5 @@ add_executable(
     sources/Notebook.cpp
     headers/Note.h
     headers/Notebook.h
+        headers/ClearScreen.h
 )
