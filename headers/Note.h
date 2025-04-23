@@ -9,8 +9,7 @@ struct Note {
     // boost::date day_deadline;
     std::string description;
     int priority;
-    Note* prev;
-    Note* next;
+    bool is_most_important = false;
 };
 
 #endif // NOTE_H

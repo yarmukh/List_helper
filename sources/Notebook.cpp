@@ -21,8 +21,12 @@ void Notebook::remove_note(int position)
 }
 
 
-void Notebook::print_list(){
-    for (auto i = 0; i < m_notes.size(); i++) {
+void Notebook::print_list()
+{
+    //std::cout << m_notes.size() << std::endl;
+    for (auto i = 0; i < m_notes.size(); i++)
+    {
+        std::cout << m_notes[i].priority << "\n";
         std::cout << m_notes[i].description << "\n";
     }
 }
@@ -30,9 +34,17 @@ void Notebook::print_list(){
 
 Note Notebook::get_most_important_note()
 {
-    return Note();
+    for (auto i = 0; i < m_notes.size(); i++) {
+        if (m_notes[i].is_most_important == true) {
+            return m_notes[i];
+        }
+    }
+    std::cout << "There is no most important note" << std::endl;
 }
 
+void Notebook::make_most_important_note(int position) {
+
+}
 
 Notebook::~Notebook()
 {
