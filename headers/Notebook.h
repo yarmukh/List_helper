@@ -18,6 +18,10 @@ public:
 
     void print_list();//ready
 
+    int get_size();
+
+    Note get_elem_by_indx(int index);
+
     Note get_most_important_note();
 
     void make_most_important_note(int position);

@@ -4,7 +4,8 @@
 #include <vector>
 #include <string>
 #include <memory>
-#include "Settings.h"
+#include "Notebook.h"
+
 
 using std::vector;
 using std::string;
@@ -16,19 +17,21 @@ class View
 private:
     vector<string> m_items;
     unique_ptr<WINDOW, decltype(&delwin)> m_window;
+    unique_ptr<Notebook> m_notebook;
 
+    void run_show_menu();
+
+    void draw_show_menu(int highlight);
 
     void draw_main_menu(int highlight);
 
-    
-    void run_settings_menu();
+    void run_remove_menu();
 
+    void draw_remove_menu(int highlight);
 
-    void draw_settings_menu(int highlight);
+    void run_input_menu();
 
-
-    void edit_settings();
-
+    void draw_input_menu(int highlight);
 public:
     View(const vector<string>& items, int height = 100, int width = 150, int y = 0, int x = 0);
     

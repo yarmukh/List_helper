@@ -17,7 +17,10 @@ void Notebook::add_new_note(Note note)
 
 void Notebook::remove_note(int position)
 {
-    m_notes.erase( m_notes.begin() + position );
+    if ((position >= 0) & (position < m_notes.size()))
+    {
+        m_notes.erase( m_notes.begin() + position );
+    }
 }
 
 
@@ -29,6 +32,16 @@ void Notebook::print_list()
         std::cout << m_notes[i].priority << "\n";
         std::cout << m_notes[i].description << "\n";
     }
+}
+
+
+int Notebook::get_size() {
+    return m_notes.size();
+}
+
+
+Note Notebook::get_elem_by_indx(int index) {
+    return m_notes[index];
 }
 
 
