@@ -151,18 +151,21 @@ void View::run_input_menu() {
             case State::ENTER_TEXT:
                 mvwprintw(edit_win.get(), 1, 1, "Enter note text:");
                 mvwprintw(edit_win.get(), 2, 1, "Text: %s", input_str.c_str());
-                wmove(edit_win.get(), 1, 7 + cursor_pos);
+                wmove(edit_win.get(), 2, 7 + cursor_pos);
+                break;
             case State::ENTER_PRIORITY:
                 mvwprintw(edit_win.get(), 1, 1, "Note text: %s", input_str.c_str());
                 mvwprintw(edit_win.get(), 2, 1, "Enter priority: ");
                 mvwprintw(edit_win.get(), 3, 1, "Priority: %s", input_str_priority.c_str());
-                wmove(edit_win.get(), 3, 10 + input_str_priority.length());
+                wmove(edit_win.get(), 3, 10 + input_str_priority.length() + 1);
+                break;
             case State::ENTER_DAYS:
                 mvwprintw(edit_win.get(), 1, 1, "Note text: %s", input_str.c_str());
                 mvwprintw(edit_win.get(), 2, 1, "Priority: %s", input_str_priority.c_str());
                 mvwprintw(edit_win.get(), 3, 1, "Date start task: %s", boost::gregorian::to_simple_string(boost::gregorian::day_clock::local_day()).c_str());
                 mvwprintw(edit_win.get(), 4, 1, "Days before deadline: %s", input_days_str.c_str());
-                wmove(edit_win.get(), 4, 22 + input_days_str.length());
+                wmove(edit_win.get(), 4, 22 + input_days_str.length() + 1);
+                break;
         }
         wrefresh(edit_win.get());
 

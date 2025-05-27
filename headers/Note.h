@@ -4,7 +4,6 @@
 #include <string>
 #include <boost/date_time/gregorian/gregorian.hpp>
 struct Note {
-    // для поля date необходимо подключить Boost
     boost::gregorian::date day_start;
     boost::gregorian::date day_deadline;
     std::string description;

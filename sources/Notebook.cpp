@@ -53,6 +53,7 @@ Note Notebook::get_most_important_note()
         }
     }
     std::cout << "There is no most important note" << std::endl;
+    // UB - undefined behavior - неопределённое поведение 
 }
 
 void Notebook::make_most_important_note(int position) {
