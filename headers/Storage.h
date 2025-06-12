@@ -6,28 +6,25 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-
+#include "../headers/Note.h"
 
 class Storage {
 private:
     std::string m_filename;
-    std::vector<std::string> m_items;
+    std::vector<Note> m_notes;
 
     void load_from_file();
 
     void save_2_file();
 
 public:
-    
     Storage(const std::string& fname);
 
-    void add_item(const std::string& item);
+    void add_item(const Note& note);
 
-    bool remove_item(const std::string& item);
+    bool remove_item(const Note& note);
 
-    const std::vector<std::string>& get_all_items() const;
-
-    // std::vector<std::string> get_all_items() const;
+    const std::vector<Note>& get_all_items() const;
 
     void clear_all();
 

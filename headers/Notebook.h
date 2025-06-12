@@ -4,15 +4,15 @@
 #include <vector>
 #include <string>
 #include "Note.h"
+#include "../headers/Storage.h"
 
 
 class Notebook {
 public:
 
-    Notebook();
+    explicit Notebook(const std::string& filename);
 
     void add_new_note(Note note);//ready
-
 
     void remove_note(int position);//ready
 
@@ -30,6 +30,7 @@ public:
 
 private:
     std::vector<Note> m_notes;
+    Storage m_storage;
 };
 
 

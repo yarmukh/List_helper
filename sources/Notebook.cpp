@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-Notebook::Notebook()
+Notebook::Notebook(const std::string& filename): m_storage(filename)
 {
 
 }
@@ -12,6 +12,7 @@ Notebook::Notebook()
 void Notebook::add_new_note(Note note)
 {
     m_notes.push_back( note );
+    m_storage.add_item(note);
 }
 
 
@@ -19,6 +20,7 @@ void Notebook::remove_note(int position)
 {
     if ((position >= 0) & (position < m_notes.size()))
     {
+        m_storage.remove_item(m_notes[position]);
         m_notes.erase( m_notes.begin() + position );
     }
 }
@@ -52,7 +54,7 @@ Note Notebook::get_most_important_note()
             return m_notes[i];
         }
     }
-    std::cout << "There is no most important note" << std::endl;
+    throw std::runtime_error("There is no most important note");
     // UB - undefined behavior - неопределённое поведение 
 }
 

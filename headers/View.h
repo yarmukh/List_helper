@@ -33,6 +33,9 @@ private:
 
     void draw_input_menu(int highlight);
 public:
+
+    void set_notebook(Notebook* notebook);
+
     View(const vector<string>& items, int height = 100, int width = 150, int y = 0, int x = 0);
     
     int run();

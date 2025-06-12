@@ -28,6 +28,8 @@ add_executable(
         headers/Notebook.h
         headers/View.h
         sources/View.cpp
+        sources/Storage.cpp
+        headers/Storage.h
 )
 
 target_include_directories(ToDoList PRIVATE ${PDCURSES_INCLUDE_DIR})

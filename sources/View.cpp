@@ -1,9 +1,10 @@
 #include "../headers/View.h"
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include <iostream>
+#include "../headers/Storage.h"
 
 View::View(const vector<string>& items, int height, int width, int y, int x)
-    : m_items(items), m_window(newwin(height, width, y, x), delwin), m_notebook(new Notebook())
+    : m_items(items), m_window(newwin(height, width, y, x), delwin), m_notebook(new Notebook("notes.dat"))
 {
     keypad(m_window.get(), TRUE);
     curs_set(0);
@@ -271,6 +272,12 @@ void View::draw_input_menu(int highlight) {
 }
 
 
+void View::set_notebook(Notebook* notebook)
+{
+    m_notebook.reset(notebook);
+}
+
+
 int View::run() {
     int c;
     int highlight = 0;
@@ -296,6 +303,8 @@ int View::run() {
                     run_remove_menu();
                 }
                 else if(highlight == 3){
+                    //add saving notes!!!!!!!!!!!
+                    //Strorage::save_2_file();
                     return -1;
                 }
 
