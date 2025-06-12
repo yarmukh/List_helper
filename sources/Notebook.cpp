@@ -5,7 +5,7 @@
 
 Notebook::Notebook(const std::string& filename): m_storage(filename)
 {
-
+    m_notes = m_storage.get_all_items();
 }
 
 
